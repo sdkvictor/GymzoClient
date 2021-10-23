@@ -10,7 +10,6 @@ import globalStyles from '../constants/styles';
 import { AuthContext } from "../context/AuthContext";
 import { getProdProfile, getUserProfile } from "../services/prod_profiles";
 import { SERVER_URL } from "../config";
-import { sendPrintRequest } from "../services/print";
 import colors from "../constants/colors";
 import Title from '../components/Title'
 import {useHistory} from 'react-router-dom';

@@ -6,7 +6,6 @@ import SignupView from '../views/SignupView';
 import NonAuthRoute from './NonAuthRoute';
 
 
-import SuccessView from '../views/SuccessView';
 import ProfileView from './../views/ProfileView';
 import PasswordView from './../views/PasswordView';
 import SuccessPasswordView from './../views/SuccessPasswordView';
@@ -25,7 +24,6 @@ function MainRouter() {
                 <PrivateRoute exact path="/nueva-rutina" component={AddRoutineView}/>
                 <PrivateRoute exact path="/nuevo-ejercicio" component={AddExerciseView}/>
 
-                <PrivateRoute exact path="/exito" component={SuccessView}/>
                 <PrivateRoute exact path="/perfil" component={ProfileView}/>
                 <PrivateRoute exact path="/contraseña" component={PasswordView}/>
                 <PrivateRoute exact path="/exitocontraseña" component={SuccessPasswordView}/>

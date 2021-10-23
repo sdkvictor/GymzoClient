@@ -12,6 +12,8 @@ function SignupView() {
 
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
+    const [height, setHeight] = useState(0);
+
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("")
 
@@ -33,6 +35,10 @@ function SignupView() {
     const onPasswordChange = event => {
         setPassword(event.target.value);
     }
+
+    const onHeightChange = event => {
+        setHeight(event.target.value);
+    }
     
     const onConfirmPasswordChange = event => {
         setConfirmPassword(event.target.value);
@@ -50,7 +56,7 @@ function SignupView() {
             return;
         }
 
-        signUp({name, email, password})
+        signUp({name, email, password, height})
             .then(result => {
                 if (result) {
                     history.push('/login');
@@ -111,6 +117,15 @@ function SignupView() {
                             required
                         />
                     </Form.Group>
+                    <Form.Group>
+                        <Form.Control
+                            type="number"
+                            placeholder="Estatura (cm)" 
+                            onChange={onHeightChange} 
+                            required
+                        />
+                    </Form.Group>
+
                     <Button
                         className="mt-3 mb-2" 
                         variant="flat" 

@@ -15,7 +15,6 @@ import { useForm, Controller } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 
 import colors from "../constants/colors";
-import { sendPrintRequest } from "../services/print";
 import { getFields } from "../services/routines";
 import { PictureAsPdfRounded, ViewArray } from "@material-ui/icons";
 import Resizer from "react-image-file-resizer";
