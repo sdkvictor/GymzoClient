@@ -1,0 +1,75 @@
+
+
+.App {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(199, 192, 192);
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+h1 {
+  color: #272727;
+  width: 100%;
+}
+
+.rotate90 {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.add-button {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  font-size: 40px;
+  color: #DCDCDD;
+  pointer-events: none;
+}
+
+.dot {
+  height: 70px;
+  width: 70px;
+  background-color: #1985A1;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 30px;
+  box-shadow: 0px 0px 10px #aaaaaa;
+  pointer-events: auto;
+  cursor: pointer;
+}
