@@ -76,9 +76,9 @@ function RoutinesView(props) {
         history.push('/nueva-rutina');
     }
 
-    const handleSelect = (id) => {
+    const handleSelect = (id, name) => {
         console.log("CLICK")
-        history.push('/rutina', {routineID: id });
+        history.push('/rutina', {routineID: id, routineName: name });
 
         //history.push('/rutina', {prodProfileId: prodProfile.api_id, routineID: id });
         //navigation.navigate('RouteName', { });
@@ -108,7 +108,7 @@ function RoutinesView(props) {
                     {routines.map((item, i) => {
                         return (
                             
-                            <Card style={styles.routineCard} onClick={()=>handleSelect(item._id)}>
+                            <Card style={styles.routineCard} onClick={()=>handleSelect(item._id, item.name)}>
                                 <CardActionArea >
                                     <CardMedia
                                     //style={styles.media}

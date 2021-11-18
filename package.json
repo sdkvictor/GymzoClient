@@ -20,6 +20,7 @@
     "react-images-upload": "^1.2.8",
     "react-images-upload-refactored": "^1.2.2",
     "react-loading": "^2.0.3",
+    "react-native-dropdown-picker": "^5.2.3",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "resize-base64": "git+https://github.com/hendrik-scholz/resize-base64.git#master",

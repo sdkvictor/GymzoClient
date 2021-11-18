@@ -241,7 +241,7 @@ const ProfileView = (props) => {
         
         
         </div>
-        <div style={styles.submitBtn}>
+        {/*<div style={styles.submitBtn}>
             <Button
               type="submit"
               variant="flat" 
@@ -266,7 +266,8 @@ const ProfileView = (props) => {
               Cambiar contraseña
             </Button>
             
-          </div>
+          </div> */}
+        
     </div>
   );
 };

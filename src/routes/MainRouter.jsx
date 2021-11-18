@@ -13,7 +13,8 @@ import RoutinesView from './../views/RoutinesView';
 import AddRoutineView from './../views/AddRoutineView';
 import ExercisesView from './../views/ExercisesView';
 import AddExerciseView from './../views/AddExerciseView';
-
+import RecordView from './../views/RecordView';
+import RecordsView from './../views/RecordsView';
 
 function MainRouter() {
     return (
@@ -23,7 +24,8 @@ function MainRouter() {
                 <PrivateRoute exact path="/rutina" component={ExercisesView}/>
                 <PrivateRoute exact path="/nueva-rutina" component={AddRoutineView}/>
                 <PrivateRoute exact path="/nuevo-ejercicio" component={AddExerciseView}/>
-
+                <PrivateRoute exact path="/record" component={RecordView}/>
+                <PrivateRoute exact path="/exercise-records" component={RecordsView}/>
                 <PrivateRoute exact path="/perfil" component={ProfileView}/>
                 <PrivateRoute exact path="/contraseña" component={PasswordView}/>
                 <PrivateRoute exact path="/exitocontraseña" component={SuccessPasswordView}/>

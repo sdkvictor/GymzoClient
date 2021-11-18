@@ -12,14 +12,16 @@ import { useHistory } from "react-router-dom";
 
 import colors from "../constants/colors";
 
-import ExercisesTable from './../components/ExercisesTable';
-import {getExercises} from "../services/exercises"
+import {getRecords} from "../services/records"
+import RecordsTable from './../components/RecordsTable';
 
 
 
-const ExercisesView = (props) => {
-  const [routine, setRoutine] = useState(props.location.state.routineID.$oid);
-  const [exercises, setExercises] = useState([])
+const RecordsView = (props) => {
+  const [exercise, setExercise] = useState(props.location.state.exerciseID);
+  const [exerciseName, setExerciseName] = useState(props.location.state.exerciseName);
+
+  const [records, setRecords] = useState([])
 
   const history = useHistory();
   
@@ -36,18 +38,13 @@ const ExercisesView = (props) => {
     //console.log("Pictures", pictures);
   };
 
-  const onAddExercise = (e) => {
-    history.push('/nuevo-ejercicio', {routineID: routine });
-  }
 
   useEffect(() => {
     
-    getExercises(props.location.state.routineID.$oid).then((resp)=>{
+    getRecords(props.location.state.exerciseID).then((resp)=>{
       console.log(resp)
-      setExercises(resp)
+      setRecords(resp)
     });
-    
-    
     
   }, []);
 
@@ -69,20 +66,18 @@ const ExercisesView = (props) => {
 
       <div style={styles.titleContainer}>
         <Title h5 style={styles.title}>
-          {props.location.state.routineName}
+          {exerciseName}
         </Title>
       </div>
       <div style={styles.titleContainer}>
-        <h3>{props.location.state.routineName}</h3>
+        <h3>{exerciseName}</h3>
       </div>
       
       <div className="container" style={styles.container}>
-        <ExercisesTable exercises={exercises}/>
+        <RecordsTable records={records}/>
 
         <div className="col-lg-12">
-        <button className="btn btn-flat float-center marginTopClass" style={styles.button} onClick={onAddExercise}>
-          Añadir Ejercicio
-        </button>
+        
       </div>
 
       </div>
@@ -92,7 +87,7 @@ const ExercisesView = (props) => {
   );
 };
 
-export default ExercisesView;
+export default RecordsView;
 
 const styles = {
   screen: {

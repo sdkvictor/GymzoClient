@@ -5,7 +5,7 @@ export async function getRoutines(userId) {
 
     console.log(url);
     let settings = {
-        method: "GET",
+        method: "POST",
         headers:{
             'Content-Type': 'application/json',
             'x-access-tokens': localStorage.getItem('token')

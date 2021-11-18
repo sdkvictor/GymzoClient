@@ -2,15 +2,16 @@ import MaterialTable from "material-table"
 import React, { useState, useEffect, useContext } from "react"
 import { AuthContext } from "../context/AuthContext"
 import { useHistory } from "react-router-dom"
-import colors from './../constants/colors';
+import colors from '../constants/colors';
 
-const ExercisesTable = (props) => {
+const RecordsTable = (props) => {
   const [data, setData] = useState([])
   const [selectedRows, setSelectedRows] = useState([])
   const columns = [
-    { title: "Ejercicio", field: "name" },
+    { title: "Weight", field: "weight" },
     { title: "Sets", field: "sets" },
     { title: "Repeticiones", field: "reps" },
+    { title: "Fecha", field: "date" }
     
   ]
   const { user } = useContext(AuthContext)
@@ -35,7 +36,7 @@ const ExercisesTable = (props) => {
 
   useEffect(() => {
     // const val = getPending("test@test.com").then((resp) => {
-    setData(props.exercises)
+    setData(props.records)
   }, [])
 
   
@@ -43,8 +44,8 @@ const ExercisesTable = (props) => {
   return (
     <div >
       <MaterialTable
-        title="Ejercicios"
-        data={props.exercises}
+        title="Records"
+        data={props.records}
         onSelectionChange={(rows) => setSelectedRows(rows)}
         onRowClick={(evt, selectedRow) => toggleModalWithData(selectedRow)}
         columns={columns}
@@ -73,4 +74,4 @@ const styles = {
   }
 }
 
-export default ExercisesTable
+export default RecordsTable

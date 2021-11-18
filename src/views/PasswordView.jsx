@@ -87,8 +87,6 @@ const PasswordView = (props) => {
 
 
   useEffect(() => {
-    initPrintCount();
-    initUserDetails();
    }, []);
  
 
@@ -96,69 +94,9 @@ const PasswordView = (props) => {
     setShowAlert(false);
   }
 
-  const initPrintCount = async () => {
-    try {
-      //console.log("User: ", user.email);
-      let result =  await getPrintCount(user.email);
-      if (result) {
-        console.log( "Result: ", result);
-        setPrintCount(result);
-      } else {
-        setAlertMessage('No se encontró un total de impresiones');
-        setAlertVariant('danger');
-        setShowAlert(true);
-      }
-    } catch (error) {
-      console.log(error);
-      setAlertMessage('Se produjo un error intentando cargar el total de impresiones. Intente cargando nuevamente.');
-      setAlertVariant('danger');
-      setShowAlert(true);
-      
-    }
-  };
+  
 
-  const initUserDetails = async () => {
-    try {
-      //console.log("User: ", user.email);
-      let result =  await getUserDetails(user.email);
-      if (result) {
-        console.log( "Result: ", result);
-        setUserDetails(result);
-        initPrinterName(result);
-      } else {
-        setAlertMessage('No se encontró un total de impresiones');
-        setAlertVariant('danger');
-        setShowAlert(true);
-      }
-    } catch (error) {
-      console.log(error);
-      setAlertMessage('Se produjo un error intentando cargar el total de impresiones. Intente cargando nuevamente.');
-      setAlertVariant('danger');
-      setShowAlert(true);
-      
-    }
-  };
-
-  const initPrinterName = async (response) => {
-    try {
-      //console.log("User: ", user.email);
-      let result =  await getPrinterDetails(response.default_printer_id);
-      if (result) {
-        console.log( "Result: ", result);
-        setPrinterName(result.deviceName);
-      } else {
-        setAlertMessage('No se encontró un total de impresiones');
-        setAlertVariant('danger');
-        setShowAlert(true);
-      }
-    } catch (error) {
-      console.log(error);
-      setAlertMessage('Se produjo un error intentando cargar el total de impresiones. Intente cargando nuevamente.');
-      setAlertVariant('danger');
-      setShowAlert(true);
-      
-    }
-  };
+  
 
 
   return (

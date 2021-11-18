@@ -35,9 +35,9 @@ export default function Navigation (props) {
                         </Nav.Link>
                         <Nav.Link 
                             className='ml-4' 
-                            onClick={() => {history.push('/estadisticas'); setExpanded(false)}}
+                            onClick={() => {history.push('/record'); setExpanded(false)}}
                         >
-                            Estadísticas
+                            Record
                         </Nav.Link>
                         
                     </Nav>
