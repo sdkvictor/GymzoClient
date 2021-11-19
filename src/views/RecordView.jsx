@@ -69,8 +69,11 @@ const RecordView = (props) => {
         
         if (result) {
           setRoutines(result);
-          setRoutine(result[0]._id.$oid);
-          initExercises(result[0]._id.$oid);
+          if(result.length>0){
+            setRoutine(result[0]._id.$oid);
+           initExercises(result[0]._id.$oid);
+          }
+          
           console.log("TemplateScreen: " , result);
         } else {
           setAlertMessage('No se encontraron las rutinas disponibles');
@@ -88,7 +91,10 @@ const RecordView = (props) => {
     getExercises(routineId).then((resp)=>{
       console.log(resp)
       setExercises(resp)
-      setExercise(resp[0]._id.$oid)
+      if(resp.length>0){
+        setExercise(resp[0]._id.$oid)
+      }
+      
     });
   }
   useEffect(() => {
